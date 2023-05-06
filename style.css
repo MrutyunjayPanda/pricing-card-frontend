@@ -4,8 +4,12 @@ html {
   font-family: 'Karla', sans-serif;
   font-size: 16px;
   font-weight: 400px;
-  margin-left: 25vw;
-  margin-top: 6vw;
+  /* Css Flex Used */
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+  /* margin-top: 6vw; */
+
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -18,8 +22,6 @@ h2,h3, h4, p {
 
 
 #card {
-  width: 600px;
-  height: 400px;
   box-shadow: -1px 1px 11px 0px rgba(0,0,0,0.63);
   border-radius: 6px;
   overflow: hidden;
@@ -36,24 +38,31 @@ h2,h3, h4, p {
   width: 100%;
   height: 55%;
   color: white;
+  /* CSS flex used */
+  display: flex;
+  flex-direction: column;
 }
 
 #bottom-left {
-  display: inline-block;
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
-  vertical-align: top;
   background-color: #2ab2af;
   padding: 28px;
+  flex-basis: 50%;
+  /* Or you can use
+   flex-grow: 1;  */
+
 }
 
 #bottom-right {
-  display: inline-block;
-  width: 50%;
+  /* width: 50%;         // for desktop first  */
+  /* for Mobile First */
   height: 100%;
-  vertical-align: top;
   background-color: #11d4cf;
   padding: 28px;
+  flex-basis: 50%;
+  /* or you can use
+  flex-grow: 1; */
 }
 
 #bottom-right h4 {
@@ -95,8 +104,8 @@ button:hover {
   cursor: pointer;
   background-color: #CDF75E;
   font-size: 20px;
-  font-weight: 550;
-  color: navy;
+  font-weight: 520;
+  color: white;
   box-shadow: -1px 1px 11px 0px rgba(0,0,0,0.63);
   transform: scale(1.01);
 }
@@ -105,19 +114,21 @@ button:hover {
   font-weight: 600;
 }
 
+#price {
+  /* Flex box used */
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
 #price1 {
   font-weight: 700;
   font-size: 1.6rem;
 }
 #price2 {
   opacity: 0.6;
-  position: relative;
-  top: -3px;
-  margin-left: 7px;
-}
-#price2, #price1 {
-  display: inline-block;
-  margin-bottom: 10px;
+  font-size: 0.8rem;
+  margin-left: 5px;
 }
 
 #bottom-left p {
@@ -127,3 +138,13 @@ button:hover {
 
 
 
+@media (min-width: 576px) {
+  #card {
+    width: 600px;
+    height: 400px;
+  }
+
+  #bottom {
+    flex-direction: row;
+  }
+}
